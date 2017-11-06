@@ -1,5 +1,6 @@
 'use strict';
 
+import _ from 'underscore';
 import Application from '../../src/application';
 import View from '../../src/view';
 
@@ -33,22 +34,6 @@ describe('Marionette Application', function() {
 
         expect(app.cid).to.exist;
       });
-    });
-  });
-
-  describe('#start', function() {
-    let app;
-    let fooOptions;
-
-    beforeEach(function() {
-      fooOptions = {foo: 'bar'};
-      app = new Application();
-    });
-
-    it('should return current application context', function() {
-      const result = app.start(fooOptions);
-
-      expect(result).to.have.been.equal(app);
     });
   });
 
@@ -199,6 +184,22 @@ describe('Marionette Application', function() {
       app.showView(view);
 
       expect(app.getView()).to.have.deep.equal(view);
+    });
+  });
+
+  describe('#start', function() {
+    let app;
+    let fooOptions;
+
+    beforeEach(function() {
+      fooOptions = {foo: 'bar'};
+      app = new Application();
+    });
+
+    it('should return current application context', function() {
+      const result = app.start(fooOptions);
+
+      expect(result).to.have.been.equal(app);
     });
   });
 });
