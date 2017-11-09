@@ -1,3 +1,6 @@
+import _ from 'underscore';
+import Marionette from '../../../src/backbone.marionette';
+
 describe('onAttach', function() {
   const expectTriggerMethod = (method, target, retval, before = null) => {
     expect(method)
